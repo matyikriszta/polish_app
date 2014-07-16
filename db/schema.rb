@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140706181208) do
+ActiveRecord::Schema.define(:version => 20140716185637) do
+
+  create_table "collections", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "collections", ["user_id"], :name => "index_collections_on_user_id"
+
+  create_table "products", :force => true do |t|
+    t.string   "brand"
+    t.string   "name"
+    t.text     "color_description"
+    t.text     "description"
+    t.string   "collection"
+    t.integer  "color_id"
+    t.integer  "finish_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "products", ["color_id"], :name => "index_products_on_color_id"
+  add_index "products", ["finish_id"], :name => "index_products_on_finish_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -40,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20140706181208) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "role"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

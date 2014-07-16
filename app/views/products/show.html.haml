@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Brand:
+  = @product.brand
+%p
+  %b Name:
+  = @product.name
+%p
+  %b Color description:
+  = @product.color_description
+%p
+  %b Description:
+  = @product.description
+%p
+  %b Collection:
+  = @product.collection
+%p
+  %b Color:
+  = @product.color
+%p
+  %b Finish:
+  = @product.finish
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path
