@@ -9,6 +9,7 @@ gem 'pg'
 gem 'haml-rails'
 gem 'devise'
 gem 'rails_admin'
+gem 'cancan'
 
 
 # Gems used only for assets and not required
