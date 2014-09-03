@@ -36,6 +36,11 @@ RailsAdmin.config do |config|
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
+  config.model Product do
+    create do
+      include_all_fields
+    end
+  end
 
 
   ################  Model configuration  ################

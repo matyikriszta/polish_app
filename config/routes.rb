@@ -1,6 +1,6 @@
 PolishApp::Application.routes.draw do
   resources :products
-
+  resources :collections
 
   devise_for :users
 

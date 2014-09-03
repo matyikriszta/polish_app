@@ -7,8 +7,9 @@ class Ability
     if user && user.admin?
         can :access, :rails_admin # only allow admin users to access Rails Admin
         can :dashboard
+        can :manage, :all
     elsif user.role? :registered
-      can :manage, :all
+        can :manage, :all
     end
     # Define abilities for the passed in user here. For example:
     #
