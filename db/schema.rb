@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140716191613) do
+ActiveRecord::Schema.define(:version => 20140903193542) do
+
+  create_table "collection_products", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "collection_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "collection_products", ["collection_id"], :name => "index_collection_products_on_collection_id"
+  add_index "collection_products", ["product_id"], :name => "index_collection_products_on_product_id"
 
   create_table "collections", :force => true do |t|
     t.string   "name"
